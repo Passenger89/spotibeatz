@@ -1,7 +1,6 @@
 let ACCESS_TOKEN
 const CLIENT_ID = 'de66fceca7a945dcaa683a00d84af221'
-const REDIRECT_URI = 'https://spotibeatz.surge.sh'
-const LOCAL_STORAGE_TERM_KEY = 'term'
+const REDIRECT_URI = 'https://spotibeatz.netlify.app'
 
 const Spotify = {
   getAccessToken() {
@@ -48,20 +47,6 @@ const Spotify = {
       uri: track.uri,
     }))
   },
-
-  // storeInitialSearch(term) {
-  //   if (!ACCESS_TOKEN) {
-  //     localStorage.setItem(LOCAL_STORAGE_TERM_KEY, JSON.stringify(term))
-  //   }
-  // },
-
-  // getInitialSearch() {
-  //   let initialTerm =
-  //     JSON.parse(localStorage.getItem(LOCAL_STORAGE_TERM_KEY)) || []
-
-  //   // populate Searchbar input value with intialTerm on page refresh
-  //   this.input.value = initialTerm
-  // },
 
   async savePlaylist(playlistName, trackUris) {
     if (!playlistName || !trackUris.length) return
